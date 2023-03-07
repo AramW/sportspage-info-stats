@@ -4,8 +4,8 @@ import styles from './layout.module.scss';
 
 export const metadata = {
   title: {
-    default: 'animals4everyone',
-    template: '%s | animals4everyone',
+    default: 'LiveScores and Roster Updates',
+    template: '%s | LiveScores and Roster Updates',
   },
   icons: {
     shortcut: '/favicon.ico',
@@ -29,6 +29,9 @@ export default function RootLayout(props: Props) {
           <nav>
             <div>
               <Link href="/">Home</Link>
+              <Link href="/home">imagelogo.png</Link>
+              <Link href="/register">Register</Link>
+              <Link href="/support">Support</Link>
               <Link href="/register">Register</Link>
             </div>
             <div>{randomNumber}</div>
