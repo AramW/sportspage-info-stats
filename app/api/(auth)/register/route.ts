@@ -24,7 +24,21 @@ export const POST = async (request: NextRequest) => {
       { status: 400 },
     );
   }
-  // check if the string is empty
+
+  // 1. check if the string is empty
+  if (!result.data.username || !result.data.password) {
+    return NextResponse.json(
+      {
+        error: [{ message: 'username or password is empty' }],
+      },
+      { status: 400 },
+    );
+  }
 
   // 2. check if the user already exists
+  // 2.a compare the username with the database
+
+  // 3. hash the password
+  // 4. create a user
+  // 5. return the new username
 };
