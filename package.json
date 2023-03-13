@@ -10,6 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/dotenv-safe": "^8.1.2",
     "bcrypt": "^5.1.0",
     "dotenv-safe": "^8.2.0",
     "ley": "^0.8.1",

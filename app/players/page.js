@@ -1,4 +1,9 @@
-export default function PlayersTage() {
+import Link from 'next/link';
+import { getPlayers } from '../../database/players';
+
+export default async function PlayersPage() {
+  const players = await getPlayers();
+
   return (
     <div style={{ display: 'flex', justifyContent: 'center' }}>
       <button
