@@ -7,11 +7,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "migrate": "dotenv ley"
   },
   "dependencies": {
     "@types/dotenv-safe": "^8.1.2",
     "bcrypt": "^5.1.0",
+    "dotenv-cli": "^7.1.0",
     "dotenv-safe": "^8.2.0",
     "ley": "^0.8.1",
     "next": "13.2.3",

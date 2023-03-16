@@ -1,6 +1,6 @@
 -- Create a table:
 
-CREATE TABLE players (
+CREATE TABLE players  (
   id integer PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
   first_name varchar (30) NOT NULL,
   type varchar(30) NOT NULL,
@@ -19,4 +19,4 @@ VALUES
   ('Klay', 'Human', 'Thompson');
 
 -- Get all players
-SELECT * FROM animals;
+SELECT * FROM players;
