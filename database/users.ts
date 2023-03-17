@@ -4,7 +4,7 @@ import { sql } from './connect';
 type User = {
   id: number;
   username: string;
-  password_hash: string;
+  passwordHash: string;
 };
 
 export const getUserByUsername = cache(async (username: string) => {

@@ -1,10 +1,10 @@
 import bcrypt from 'bcrypt';
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
-import { getUserByUsername } from '../../../../../database/users';
+import { getUserByUsername } from '../../../../database/users';
 
 const userSchema = z.object({
-  userName: z.string(),
+  username: z.string(),
   password: z.string(),
 });
 

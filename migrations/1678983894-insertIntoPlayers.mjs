@@ -13,10 +13,12 @@ export async function up(sql) {
 }
 
 export async function down(sql) {
-  await sql`
+  for (const player of players) {
+    await sql`
     DELETE FROM
       players
-     WHERE
-     id = 1
-  `;
+    WHERE
+      id = ${player.id}
+    `;
+  }
 }
