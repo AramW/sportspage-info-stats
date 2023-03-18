@@ -9,7 +9,7 @@ import { sql } from './connect';
 //  { id: 5, firstName: 'Klay', type: 'Human', lastName: 'Thompson' },
 // ];
 
-type Player = {
+export type Player = {
   id: number;
   firstName: string;
   type: string;
