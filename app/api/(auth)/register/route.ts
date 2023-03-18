@@ -21,7 +21,7 @@ export const POST = async (request: NextRequest) => {
   if (!result.success) {
     return NextResponse.json(
       {
-        error: result.error.issues,
+        errors: result.error.issues,
       },
       { status: 400 },
     );
@@ -31,7 +31,7 @@ export const POST = async (request: NextRequest) => {
   if (!result.data.username || !result.data.password) {
     return NextResponse.json(
       {
-        error: [{ message: 'username or password is empty' }],
+        errors: [{ message: 'username or password is empty' }],
       },
       { status: 400 },
     );
@@ -44,7 +44,7 @@ export const POST = async (request: NextRequest) => {
 
   if (user) {
     return NextResponse.json(
-      { error: [{ message: 'username is already taken' }] },
+      { errors: [{ message: 'username is already taken' }] },
       { status: 400 },
     );
   }
@@ -58,7 +58,7 @@ export const POST = async (request: NextRequest) => {
 
   if (!newUser) {
     return NextResponse.json(
-      { error: [{ message: 'user creation failed' }] },
+      { errors: [{ message: 'user creation failed' }] },
       { status: 500 },
     );
   }

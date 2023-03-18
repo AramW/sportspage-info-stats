@@ -33,8 +33,8 @@ export default function RootLayout(props: Props) {
               <Link href="/teamroster">TeamRoster</Link>
               <Link href="/players">Players</Link>
               <Link href="/support">Support</Link>
-              <Link href="/login">Login</Link>
               <Link href="/register">Register</Link>
+              <Link href="/login">Login</Link>
             </div>
             <div>{randomNumber}</div>
           </nav>

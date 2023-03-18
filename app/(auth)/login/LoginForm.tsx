@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { RegisterResponseBody } from '../../api/(auth)/register/route';
 
-export default function RegisterForm() {
+export default function LoginForm() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState<{ message: string }[]>([]);
@@ -15,7 +15,7 @@ export default function RegisterForm() {
       onSubmit={async (event) => {
         event.preventDefault();
 
-        const response = await fetch('/api/register', {
+        const response = await fetch('/api/login', {
           method: 'POST',
           body: JSON.stringify({ username, password }),
         });
@@ -47,7 +47,7 @@ export default function RegisterForm() {
           onChange={(event) => setPassword(event.currentTarget.value)}
         />
       </label>
-      <button>Register</button>
+      <button>Login</button>
     </form>
   );
 }
