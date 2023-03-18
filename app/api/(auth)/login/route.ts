@@ -44,7 +44,7 @@ export const POST = async (request: NextRequest) => {
 
   if (!userWithPasswordHash) {
     return NextResponse.json(
-      { error: [{ message: 'user not found' }] },
+      { errors: [{ message: 'user not found' }] },
       { status: 401 },
     );
   }
@@ -57,7 +57,7 @@ export const POST = async (request: NextRequest) => {
 
   if (!isPasswordValid) {
     return NextResponse.json(
-      { error: [{ message: 'password is not valid' }] },
+      { errors: [{ message: 'password is not valid' }] },
       { status: 401 },
     );
   }
