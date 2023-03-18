@@ -26,8 +26,8 @@ export default function LoginForm() {
           setErrors(data.errors);
           return;
         }
-        console.log(data.user);
-        router.push('/');
+
+        router.push(`/profile/${data.user.username}`);
       }}
     >
       {errors.map((error) => (

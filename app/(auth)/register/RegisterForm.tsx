@@ -26,8 +26,9 @@ export default function RegisterForm() {
           setErrors(data.errors);
           return;
         }
-        console.log(data.user);
-        router.push('/');
+
+        router.push(`/profile/${data.user.username}
+        `);
       }}
     >
       {errors.map((error) => (

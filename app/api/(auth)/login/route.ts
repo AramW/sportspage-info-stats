@@ -43,6 +43,7 @@ export const POST = async (request: NextRequest) => {
   );
 
   if (!userWithPasswordHash) {
+    // consider using the same output for user or password not valid
     return NextResponse.json(
       { errors: [{ message: 'user not found' }] },
       { status: 401 },
@@ -56,8 +57,9 @@ export const POST = async (request: NextRequest) => {
   ); // Boolean
 
   if (!isPasswordValid) {
+    // consider using the same output for user or password not valid
     return NextResponse.json(
-      { errors: [{ message: 'password is not valid' }] },
+      { errors: [{ message: 'user or password not valid' }] },
       { status: 401 },
     );
   }
