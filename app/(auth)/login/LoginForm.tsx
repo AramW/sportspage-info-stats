@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { RegisterResponseBody } from '../../api/(auth)/register/route';
 
-export default function LoginForm() {
+export default function LoginForm(props: { returnTo?: string | string[] }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState<{ message: string }[]>([]);
@@ -24,6 +24,11 @@ export default function LoginForm() {
 
         if ('errors' in data) {
           setErrors(data.errors);
+          return;
+        }
+
+        if (props.returnTo) {
+          router.push(props.returnTo);
           return;
         }
 
