@@ -1,5 +1,7 @@
 import './global.scss';
+import { cookies } from 'next/headers';
 import Link from 'next/link';
+import { getUserBySessionToken } from '../database/users';
 import styles from './layout.module.scss';
 
 export const metadata = {
@@ -18,7 +20,16 @@ type Props = {
 
 export const dynamic = 'force-dynamic';
 
-export default function RootLayout(props: Props) {
+export default async function RootLayout(props: Props) {
+  // 1. get the session token from the cookie
+  const cookieStore = cookies();
+  const token = cookieStore.get('sessionToken');
+
+  // 2. validate the session
+
+  // 3. get the user profile matching the session
+  const user = token && (await getUserBySessionToken(token.value));
+
   const randomNumber = Math.floor(Math.random() * 10);
 
   return (
@@ -39,6 +50,7 @@ export default function RootLayout(props: Props) {
               <Link href="/logout" prefetch={false}>
                 Logout
               </Link>
+              {user && user.username}
             </div>
             <div>{randomNumber}</div>
           </nav>
