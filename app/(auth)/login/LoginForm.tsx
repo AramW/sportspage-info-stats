@@ -27,7 +27,12 @@ export default function LoginForm(props: { returnTo?: string | string[] }) {
           return;
         }
 
-        if (props.returnTo) {
+        if (
+          props.returnTo &&
+          !Array.isArray(props.returnTo) &&
+          // This is checking that the return to is a valid path in your application and not going to a different domain
+          /^\/[a-zA-Z0-9-?=/]*$/.test(props.returnTo)
+        ) {
           router.push(props.returnTo);
           return;
         }

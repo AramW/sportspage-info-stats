@@ -27,7 +27,7 @@ export const POST = async (request: NextRequest) => {
     );
   }
 
-  // 1. check if the string is empty
+  //  check if the string is empty
   if (!result.data.username || !result.data.password) {
     return NextResponse.json(
       {
