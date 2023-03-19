@@ -35,6 +35,10 @@ export default function RootLayout(props: Props) {
               <Link href="/support">Support</Link>
               <Link href="/register">Register</Link>
               <Link href="/login">Login</Link>
+              {/* we want to disable prefetch for logout link */}
+              <Link href="/logout" prefetch={false}>
+                Logout
+              </Link>
             </div>
             <div>{randomNumber}</div>
           </nav>
