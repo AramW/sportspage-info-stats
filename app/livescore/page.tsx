@@ -1,4 +1,4 @@
-export default async function SupportTage() {
+export default async function livescoreTage() {
   const response = await fetch(
     // opder const soccer/footballrespons (variablen nicht doppelt verwenden zb constsoccerrespons, const baskeball responst)
     'https://www.thesportsdb.com/api/v2/json/60130162/livescore.php?s=Soccer',
@@ -8,8 +8,8 @@ export default async function SupportTage() {
     },
   );
 
-  const userData = await response.json();
-  console.log(userData.events[0]);
+  const soccerData = await response.json();
+  console.log(soccerData.events[0]);
 
   return (
     <div
@@ -41,18 +41,17 @@ export default async function SupportTage() {
         </h1>
       </div>
 
-      {userData.events.map((data: any) => {
+      {soccerData.events.map((data: any) => {
         return (
-          <div key={`data-${userData.id}`}>
-            <div>{data.strLeague}</div>
+          <div key={`data-${soccerData.id}`}>
             <div>{data.strSport}</div>
-
+            <div>{data.strLeague}</div>
             <div>
               {data.strStatus}, min:{data.strProgress}:{data.strHomeTeam}.
               {data.intHomeScore}:{data.intAwayScore}.{data.strAwayTeam}
               {/* :::
 
-              {data.strHomeTeam}: */}
+              {data.strHomeTeamBadge}: */}
             </div>
           </div>
         );
