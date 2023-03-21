@@ -1,6 +1,7 @@
 import './global.scss';
 import { cookies } from 'next/headers';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { getUserBySessionToken } from '../database/users';
 import styles from './layout.module.scss';
 
@@ -41,15 +42,17 @@ export default async function RootLayout(props: Props) {
             <div>
               <Link href="/">Home</Link>
               <Link href="/livescore">LiveScore</Link>
-              <Link href="/teamroster">TeamRoster</Link>
-              <Link href="/players">Players</Link>
+              {user && <Link href="/teamroster">TeamRoster</Link>}
+              {user && <Link href="/players">Players</Link>}
               <Link href="/support">Support</Link>
-              <Link href="/register">Register</Link>
-              <Link href="/login">Login</Link>
+              {!user && <Link href="/register">Register</Link>}
+              {!user && <Link href="/login">Login</Link>}
               {/* we want to disable prefetch for logout link */}
-              <Link href="/logout" prefetch={false}>
-                Logout
-              </Link>
+              {user && (
+                <Link href="/logout" prefetch={false}>
+                  Logout
+                </Link>
+              )}
               {user && user.username}
             </div>
             <div>{randomNumber}</div>
