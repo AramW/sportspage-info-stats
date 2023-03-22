@@ -45,14 +45,15 @@ export default function RegisterForm(props: { returnTo?: string | string[] }) {
         <div key={`error-${error.message}`}>Error: {error.message}</div>
       ))}
       <label>
-        username:
+        Username:
         <input
           value={username}
           onChange={(event) => setUsername(event.currentTarget.value)}
         />
       </label>
+      <p></p>
       <label>
-        password:
+        Password:
         <input
           value={password}
           onChange={(event) => setPassword(event.currentTarget.value)}

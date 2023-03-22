@@ -38,28 +38,59 @@ export default async function RootLayout(props: Props) {
       <head />
       <body>
         <header className={styles.header}>
+          <h2>
+            <Link href="/" className={`${styles.glitch} no-hover-color`}>
+              <span aria-hidden="true">LSaI</span>
+              LSaI
+              <span aria-hidden="true">LSaI</span>
+            </Link>
+          </h2>
           <nav>
             <div>
-              <Link href="/">Home</Link>
-              <Link href="/livescore">LiveScore</Link>
-              {user && <Link href="/teamroster">TeamRoster</Link>}
-              {user && <Link href="/players">Players</Link>}
-              <Link href="/support">Support</Link>
-              {!user && <Link href="/register">Register</Link>}
-              {!user && <Link href="/login">Login</Link>}
-              {/* we want to disable prefetch for logout link */}
+              <Link href="/" className={styles.link}>
+                Home
+              </Link>
+              <Link href="/livescore" className={styles.link}>
+                LiveScore
+              </Link>
               {user && (
-                <Link href="/logout" prefetch={false}>
-                  Logout
+                <Link href="/teamroster" className={styles.link}>
+                  TeamRoster
                 </Link>
               )}
+              {user && (
+                <Link href="/players" className={styles.link}>
+                  Players
+                </Link>
+              )}
+              <Link href="/support" className={styles.link}>
+                Support
+              </Link>
+
               {user && user.username}
             </div>
             <div>{randomNumber}</div>
+            {!user && (
+              <Link href="/register" className={styles.link}>
+                Register |
+              </Link>
+            )}
+            {!user && (
+              <Link href="/login" className={styles.link}>
+                Login |
+              </Link>
+            )}
+            {/* we want to disable prefetch for logout link */}
+            {user && (
+              <Link href="/logout" prefetch={false} className={styles.link}>
+                Logout
+              </Link>
+            )}
+            <button id="dark-mode-toggle">Dark Mode</button>
           </nav>
         </header>
         {props.children}
-        <footer className={styles.footer}>
+        <footer className={`${styles.footer} ${styles.link}`}>
           something something copyright 2023
         </footer>
       </body>

@@ -19,8 +19,8 @@ export default function Home() {
           className={styles.logo}
           src="/football-live-score.png.jpg"
           alt="Next.js Logo"
-          width={469}
-          height={280}
+          width={769}
+          height={480}
           priority
         />
       </div>
