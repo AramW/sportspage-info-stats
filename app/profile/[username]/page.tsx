@@ -13,8 +13,9 @@ export default async function UserProfile({ params }: Props) {
 
   return (
     <div className={styles.userProfile}>
-      <h1>{user.username}</h1>
-      <p>id: {user.id}</p>
+      <h1>Profile picture</h1>
+      <h1>Username:{user.username}</h1>
+      <p> Myid: {user.id}</p>
     </div>
   );
 }

@@ -34,7 +34,27 @@ export default async function PlayersPage() {
           alignItems: 'center',
         }}
       >
+        <p
+          style={{
+            textAlign: 'center',
+            marginBottom: '20px',
+            maxWidth: '1200px',
+            lineHeight: '1.5',
+          }}
+        >
+          Discover comprehensive information on your favorite sports players
+          with our search feature. Simply type in the player's name and click
+          the button to retrieve their stats, career history, and more. Start
+          your search now to uncover the stories and statistics behind your
+          favorite athletes!
+        </p>
+        <input
+          type=""
+          placeholder="Search for a player"
+          style={{ width: '300px', height: '30px', marginBottom: '10px' }}
+        />
         <button
+          // onClick={}
           style={{
             background: 'white',
             fontSize: '20px',
@@ -45,23 +65,7 @@ export default async function PlayersPage() {
         >
           Click me
         </button>
-        <h3 style={{ marginTop: '10px' }}>Players</h3>
       </div>
     </div>
   );
 }
-
-// this
-
-// <main> {players.map((player) => (
-//          <div key={player.id}>
-//            <Link href={`/players/${player.id}`}>
-//              <h2>{player.firstName}</h2>
-//            </Link>
-//            <Link href={`/players/${player.id}`}></Link>
-//          </div>
-//        ))}
-//      </main>
-//    </div>
-//  );
-// }

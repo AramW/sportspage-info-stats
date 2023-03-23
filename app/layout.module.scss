@@ -16,14 +16,13 @@
       display: flex;
       gap: 60px;
     }
-    // Add default styles for the link
+
     a {
-      color: #fff; // Set the initial color of the link to white
+      color: #fff; // Setting the initial color of the link to white
       text-decoration: none;
       transition: color 0.3s ease;
     }
 
-    // Add hover effect for the link
     a:hover {
       color: rgb(76, 98, 161); // Change the color when hovered
     }
@@ -33,10 +32,10 @@
 .footer {
   background-color: #001e28;
   border-radius: 6px;
-  margin: 20px 0;
+  margin: 10px 0;
   display: flex;
   margin-top: 100px;
-  padding: 30px;
+  padding: 20px;
   border-top: 2px solid var(--main-bg-color);
 }
 
@@ -81,8 +80,6 @@
   /* color: red; */
   opacity: 0.3;
 }
-
-/* https://web.dev/prefers-reduced-motion/#(bonus)-forcing-reduced-motion-on-all-websites */
 
 @keyframes glitch {
   0% {

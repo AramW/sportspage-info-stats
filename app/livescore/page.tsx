@@ -1,21 +1,32 @@
 import styles from './Livescore.module.scss';
 
 export default async function livescoreTage() {
-  const response = await fetch(
-    // opder const soccer/footballrespons (variablen nicht doppelt verwenden zb constsoccerrespons, const baskeball responst)
-    'https://www.thesportsdb.com/api/v2/json/60130162/livescore.php?s=Soccer',
-
-    {
-      method: 'GET',
-      headers: { 'Content-Type': 'application/json' },
-    },
-  );
-
-  const soccerData = await response.json();
-  console.log(soccerData);
-
-  const basketballResponse = await fetch(
-    // opder const soccer/footballrespons (variablen nicht doppelt verwenden zb constsoccerrespons, const baskeball responst)
+  // start
+  async function fetchSoccerData() {
+    const soccerResponse = await fetch(
+      'https://www.thesportsdb.com/api/v2/json/60130162/livescore.php?s=Soccer',
+      {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
+      },
+    );
+    const soccerData = await soccerResponse.json();
+    return soccerData;
+  }
+  // stop
+  async function fetchBasketballData() {
+    const basketballResponse = await fetch(
+      'https://www.thesportsdb.com/api/v2/json/60130162/livescore.php?s=Basketball',
+      {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
+      },
+    );
+    const basketballData = await basketballResponse.json();
+    return basketballData;
+  }
+  // stop
+  const hockeyResponse = await fetch(
     'https://www.thesportsdb.com/api/v2/json/60130162/livescore.php?s=Ice_Hockey',
 
     {
@@ -24,9 +35,10 @@ export default async function livescoreTage() {
     },
   );
 
-  const basketballData = await basketballResponse.json();
-  console.log(basketballData);
+  const hockeyData = await hockeyResponse.json();
+  console.log(hockeyData);
 
+  // stop
   return (
     <>
       <div
@@ -42,11 +54,11 @@ export default async function livescoreTage() {
             <button
               style={{
                 background: 'black',
-                fontSize: '20px',
+                fontSize: '40px',
                 padding: '10px 50px',
                 color: 'white',
                 borderRadius: '15px',
-                marginBottom: '100px',
+                marginBottom: '50px',
                 marginLeft: '20px',
               }}
             >
@@ -55,12 +67,17 @@ export default async function livescoreTage() {
           </h1>
         </div>
       </div>
-      <div className={styles.strSport}>{soccerData.events[0].strSport}</div>
+      {/* Hockey map */}
+      <div className={styles.sportButtonsContainer}>
+        <button className={styles.strSportButton}>Soccer</button>
+        <button className={styles.strSportButton}>Basketball</button>
+        <button className={styles.strSportButton}>Ice Hockey</button>
+      </div>
       <div className={styles.matchList}>
-        {soccerData.events.map((data: any) => {
+        {hockeyData.events.map((data: any) => {
           return (
             <div
-              key={`data-${soccerData.id}`}
+              key={`data-${hockeyData.id}`}
               className={styles.matchContainer}
             >
               <div className={styles.matchInfo}>
