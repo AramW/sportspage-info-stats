@@ -41,7 +41,7 @@ export default async function RootLayout(props: Props) {
           <h2>
             <Link href="/" className={`${styles.glitch} no-hover-color`}>
               <span aria-hidden="true">LSaI</span>
-              LSaI
+              LiveSports
               <span aria-hidden="true">LSaI</span>
             </Link>
           </h2>

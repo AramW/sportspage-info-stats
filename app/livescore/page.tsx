@@ -1,8 +1,8 @@
 import styles from './Livescore.module.scss';
 
-export default async function livescoreTage() {
-  // start
-  async function fetchSoccerData() {
+// start
+export default async function getLivescorePage() {
+  async function getSoccerData() {
     const soccerResponse = await fetch(
       'https://www.thesportsdb.com/api/v2/json/60130162/livescore.php?s=Soccer',
       {
@@ -14,7 +14,7 @@ export default async function livescoreTage() {
     return soccerData;
   }
   // stop
-  async function fetchBasketballData() {
+  async function getBasketballData() {
     const basketballResponse = await fetch(
       'https://www.thesportsdb.com/api/v2/json/60130162/livescore.php?s=Basketball',
       {
@@ -71,7 +71,9 @@ export default async function livescoreTage() {
       <div className={styles.sportButtonsContainer}>
         <button className={styles.strSportButton}>Soccer</button>
         <button className={styles.strSportButton}>Basketball</button>
-        <button className={styles.strSportButton}>Ice Hockey</button>
+        <button className={styles.strSportButton} onClick={hockeyData}>
+          Ice Hockey
+        </button>
       </div>
       <div className={styles.matchList}>
         {hockeyData.events.map((data: any) => {
