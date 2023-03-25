@@ -1,31 +1,7 @@
 import styles from './Livescore.module.scss';
 
-// start
-export default async function GetLivescorePage() {
-  async function getSoccerData() {
-    const soccerResponse = await fetch(
-      'https://www.thesportsdb.com/api/v2/json/60130162/livescore.php?s=Soccer',
-      {
-        method: 'GET',
-        headers: { 'Content-Type': 'application/json' },
-      },
-    );
-    const soccerData = await soccerResponse.json();
-    return soccerData;
-  }
-  // stop
-  async function getBasketballData() {
-    const basketballResponse = await fetch(
-      'https://www.thesportsdb.com/api/v2/json/60130162/livescore.php?s=Basketball',
-      {
-        method: 'GET',
-        headers: { 'Content-Type': 'application/json' },
-      },
-    );
-    const basketballData = await basketballResponse.json();
-    return basketballData;
-  }
-  // stop
+export default async function GetHockeyData() {
+  // const [myHockeyData, setMyHockeyData] = useState([]);
 
   const hockeyResponse = await fetch(
     'https://www.thesportsdb.com/api/v2/json/60130162/livescore.php?s=Ice_Hockey',
@@ -39,8 +15,6 @@ export default async function GetLivescorePage() {
   const hockeyData = await hockeyResponse.json();
   // setMyHockeyData(hockeyData);
   console.log('hockeyData', hockeyData);
-
-  // stop
   return (
     <>
       <div
@@ -73,17 +47,17 @@ export default async function GetLivescorePage() {
       <div className={styles.sportButtonsContainer}>
         <button className={styles.strSportButton}>Soccer</button>
         <button className={styles.strSportButton}>Basketball</button>
-        <button className={styles.strSportButton} onClick={hockeyData}>
+        <button
+          className={styles.strSportButton}
+          onClick={(e) => GetHockeyData()}
+        >
           Ice Hockey
         </button>
       </div>
       <div className={styles.matchList}>
-        {hockeyData.events.map((data: any) => {
+        {hockeyData.map((data: any) => {
           return (
-            <div
-              key={`data-${hockeyData.id}`}
-              className={styles.matchContainer}
-            >
+            <div key={`data-${hockeyData}`} className={styles.matchContainer}>
               <div className={styles.matchInfo}>
                 <div className={styles.sport}>{data.strSport}</div>
                 <div className={styles.league}>{data.strLeague}</div>

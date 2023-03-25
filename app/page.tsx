@@ -27,6 +27,15 @@ export default function Home() {
       </div>
 
       <div className={styles.grid}>
+        <Link href="/livescore">
+          <div className={styles.card}>
+            <h2 className={inter.className}>
+              LiveScores <span>-&gt;</span>
+            </h2>
+            <p className={inter.className}>all scores Live and in real time</p>
+          </div>
+        </Link>
+
         <Link href="/teamroster">
           <div className={styles.card}>
             <h2 className={inter.className}>
@@ -44,15 +53,6 @@ export default function Home() {
               Players <span>-&gt;</span>
             </h2>
             <p className={inter.className}>Playerinfos, stats and more</p>
-          </div>
-        </Link>
-
-        <Link href="/livescore">
-          <div className={styles.card}>
-            <h2 className={inter.className}>
-              LiveScores <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>all scores Live and in real time</p>
           </div>
         </Link>
       </div>
