@@ -1,8 +1,9 @@
 .container {
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
+  align-items: flex-start;
+  height: 90vh;
+  padding-top: 10vh;
   background-color: rgb(201, 192, 192);
 }
 

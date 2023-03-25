@@ -1,5 +1,6 @@
 import { Inter } from 'next/font/google';
 import Image from 'next/image';
+import Link from 'next/link';
 import styles from './page.module.css';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -26,43 +27,34 @@ export default function Home() {
       </div>
 
       <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            TeamRoster <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find your favourite Team and check out all the Roster changes!
-          </p>
-        </a>
+        <Link href="/teamroster">
+          <div className={styles.card}>
+            <h2 className={inter.className}>
+              TeamRoster <span>-&gt;</span>
+            </h2>
+            <p className={inter.className}>
+              Find your favourite Team and check out all the Roster changes!
+            </p>
+          </div>
+        </Link>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Players <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Playerinfos, stats and more</p>
-        </a>
+        <Link href="/players">
+          <div className={styles.card}>
+            <h2 className={inter.className}>
+              Players <span>-&gt;</span>
+            </h2>
+            <p className={inter.className}>Playerinfos, stats and more</p>
+          </div>
+        </Link>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            LiveScores <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>all scores Live and in real time</p>
-        </a>
+        <Link href="/livescore">
+          <div className={styles.card}>
+            <h2 className={inter.className}>
+              LiveScores <span>-&gt;</span>
+            </h2>
+            <p className={inter.className}>all scores Live and in real time</p>
+          </div>
+        </Link>
       </div>
     </main>
   );
