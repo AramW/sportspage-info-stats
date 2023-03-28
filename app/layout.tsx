@@ -95,7 +95,47 @@ export default async function RootLayout(props: Props) {
         </header>
         {props.children}
         <footer className={`${styles.footer} ${styles.link}`}>
-          something something copyright 2023
+          <div>
+            <p>&copy; 2023 TopLivescore. All rights reserved.</p>
+            <p>
+              1234 Sports Avenue, Suite 100 <br />
+              Anytown, AA 12345
+            </p>
+            <p>
+              Phone: +1 (123) 456-7890 <br />
+              Email: info@toplivescore.com
+            </p>
+          </div>
+          <div>
+            <ul>
+              <li>
+                <a href="/about">About Us</a>
+              </li>
+              <li>
+                <a href="/contact">Contact Us</a>
+              </li>
+              <li>
+                <a href="/privacy-policy">Privacy Policy</a>
+              </li>
+              <li>
+                <a href="/terms-of-service">Terms of Service</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            {/* <p>Follow us on social media:</p> */}
+            <ul>
+              <li>
+                <a href="https://www.facebook.com/toplivescore">Facebook</a>
+              </li>
+              <li>
+                <a href="https://www.twitter.com/toplivescore">Twitter</a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/toplivescore">Instagram</a>
+              </li>
+            </ul>
+          </div>
         </footer>
       </body>
     </html>
