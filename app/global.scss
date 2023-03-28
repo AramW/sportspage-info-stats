@@ -14,8 +14,10 @@ body {
   line-height: 1.5;
   margin: 0;
   background-color: rgb(201, 192, 192);
+  &.dark {
+    background-color: #292929;
+  }
 }
-
 body.light-mode {
   background-color: #333;
   color: #333;

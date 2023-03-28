@@ -4,6 +4,7 @@ import Link from 'next/link';
 // import { useRouter } from 'next/navigation';
 import { getUserBySessionToken } from '../database/users';
 import styles from './layout.module.scss';
+import ToggleTheme from './toggleTheme';
 
 export const metadata = {
   title: {
@@ -90,7 +91,7 @@ export default async function RootLayout(props: Props) {
                 Logout
               </Link>
             )}
-            <button id="dark-mode-toggle">Dark Mode</button>
+            <ToggleTheme />
           </nav>
         </header>
         {props.children}

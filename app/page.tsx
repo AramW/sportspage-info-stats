@@ -51,6 +51,7 @@ export default function Home() {
           <div className={styles.card}>
             <h2 className={`${inter.className} ${styles.linkText}`}>
               TeamRoster <span>-&gt;</span>
+              <p>Users only!</p>
             </h2>
           </div>
         </Link>
@@ -73,6 +74,7 @@ export default function Home() {
           <div className={styles.card}>
             <h2 className={`${inter.className} ${styles.linkText}`}>
               Players <span>-&gt;</span>
+              <p>Users only!</p>
             </h2>
           </div>
         </Link>
