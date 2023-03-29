@@ -50,7 +50,7 @@ export default function Home() {
         <Link href="/teamroster">
           <div className={styles.card}>
             <h2 className={`${inter.className} ${styles.linkText}`}>
-              TeamRoster <span>-&gt;</span>
+              Teams <span>-&gt;</span>
               <p>Users only!</p>
             </h2>
           </div>

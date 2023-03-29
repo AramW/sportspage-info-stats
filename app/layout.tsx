@@ -56,7 +56,7 @@ export default async function RootLayout(props: Props) {
               </Link>
               {user && (
                 <Link href="/teamroster" className={styles.link}>
-                  TeamRoster
+                  Teams
                 </Link>
               )}
               {user && (

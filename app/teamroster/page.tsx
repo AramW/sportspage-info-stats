@@ -1,6 +1,7 @@
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 import { getValidSessionByToken } from '../../database/sessions';
+import SearchTeam from './searchTeam';
 
 export default async function teamrosterTage() {
   // check if i have a valid session
@@ -12,9 +13,9 @@ export default async function teamrosterTage() {
     (await getValidSessionByToken(sessionTokenCookie.value));
 
   // if yes redirect to home
-  if (!session) {
-    redirect('/login?returnTo=/teamroster');
-  }
+  // if (!session) {
+  //   redirect('/login?returnTo=/teamroster');
+  // }
 
   return (
     <div style={{ display: 'flex', justifyContent: 'center' }}>
@@ -37,23 +38,7 @@ export default async function teamrosterTage() {
           Enter the team name to access their roster, statistics, and more.
           Begin your search to explore the data behind your favorite teams.
         </p>
-        <input
-          type=""
-          placeholder="Search for a team roster"
-          style={{ width: '300px', height: '30px', marginBottom: '10px' }}
-        />
-        <button
-          // onClick={}
-          style={{
-            background: 'white',
-            fontSize: '20px',
-            padding: '5px 30px',
-            color: 'black',
-            borderRadius: '15px',
-          }}
-        >
-          Click me
-        </button>
+        <SearchTeam />
       </div>
     </div>
   );

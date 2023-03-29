@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import { getPlayers } from '../../database/players';
 import { getValidSessionByToken } from '../../database/sessions';
+import SearchPlayers from './searchPlayers';
 
 export default async function PlayersPage() {
   // check if i have a valid session
@@ -17,11 +18,11 @@ export default async function PlayersPage() {
 
   // for example you may also check if session user is an admin role
 
-  if (!session) {
-    redirect('/login?returnTo=/players');
-  }
+  // if (!session) {
+  //   redirect('/login?returnTo=/players');
+  // }
 
-  const players = await getPlayers();
+  // const players = await getPlayers();
 
   // const singlePlayer = await getPlayer(params.playerName);
 
@@ -48,23 +49,7 @@ export default async function PlayersPage() {
           your search now to uncover the stories and statistics behind your
           favorite athletes!
         </p>
-        <input
-          type=""
-          placeholder="Search for a player"
-          style={{ width: '300px', height: '30px', marginBottom: '10px' }}
-        />
-        <button
-          // onClick={}
-          style={{
-            background: 'white',
-            fontSize: '20px',
-            padding: '5px 30px',
-            color: 'black',
-            borderRadius: '15px',
-          }}
-        >
-          Click me
-        </button>
+        <SearchPlayers />
       </div>
     </div>
   );
