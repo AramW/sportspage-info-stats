@@ -29,7 +29,7 @@ export default function SearchTeam() {
           borderRadius: '15px',
         }}
       >
-        Click me
+        Search
       </button>
 
       {teams.map((data: any) => {

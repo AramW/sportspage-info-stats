@@ -29,7 +29,7 @@ export default function SearchPlayers() {
           borderRadius: '15px',
         }}
       >
-        Click me
+        Search
       </button>
 
       {players.map((data: any, indx: number) => {

@@ -8,7 +8,7 @@ import SearchPlayers from './searchPlayers';
 export default async function PlayersPage() {
   // check if i have a valid session
   const sessionTokenCookie = cookies().get('sessionToken');
-  console.log(sessionTokenCookie);
+  // console.log(sessionTokenCookie);
 
   const session =
     sessionTokenCookie &&
