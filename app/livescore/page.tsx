@@ -1,11 +1,11 @@
-import { getBasketballData, getHockeyData, getSoccerData } from './api';
+// import { getBasketballData, getHockeyData, getSoccerData } from './api';
 import ScoreTabs from './scoreTabs';
 
 // start
 export default async function GetLivescorePage() {
-  const soccerData = await getSoccerData();
-  const hockeyData = await getHockeyData();
-  const basketballData = await getBasketballData();
+  // const soccerData = await getSoccerData();
+  // const hockeyData = await getHockeyData();
+  // const basketballData = await getBasketballData();
 
   return (
     <>
@@ -35,11 +35,7 @@ export default async function GetLivescorePage() {
           </h1>
         </div>
       </div>
-      <ScoreTabs
-        soccerData={soccerData}
-        hockeyData={hockeyData}
-        basketballData={basketballData}
-      />
+      <ScoreTabs />
     </>
   );
 }

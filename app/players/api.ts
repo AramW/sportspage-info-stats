@@ -3,7 +3,7 @@ export const searchPlayer = async (
   setter: (data: []) => void,
 ) => {
   const request = await fetch(
-    `http://localhost:3000/api/searchPlayer?search=${serchQuery}`,
+    `/api/searchPlayer?search=${serchQuery}`,
 
     {
       method: 'GET',

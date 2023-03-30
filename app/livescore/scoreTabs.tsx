@@ -1,38 +1,33 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { fetchScore } from './api';
 import styles from './Livescore.module.scss';
 
-type Props = {
-  soccerData: { events: [] };
-  hockeyData: { events: [] };
-  basketballData: { events: [] };
-};
+export default function ScoreTabs() {
+  const [selectedItems, setSelectedItems] = useState({ events: [] });
 
-export default function ScoreTabs({
-  soccerData,
-  hockeyData,
-  basketballData,
-}: Props) {
-  const [selectedItems, setSelectedItems] = useState(soccerData);
+  useEffect(() => {
+    fetchScore(setSelectedItems, 'Soccer');
+  }, []);
 
   return (
     <>
       <div className={styles.sportButtonsContainer}>
         <button
-          onClick={async () => setSelectedItems(soccerData)}
+          onClick={() => fetchScore(setSelectedItems, 'Soccer')}
           className={styles.strSportButton}
         >
           Soccer
         </button>
         <button
-          onClick={async () => setSelectedItems(basketballData)}
+          onClick={() => fetchScore(setSelectedItems, 'Basketball')}
           className={styles.strSportButton}
         >
           Basketball
         </button>
         <button
-          onClick={async () => setSelectedItems(hockeyData)}
+          onClick={() => fetchScore(setSelectedItems, 'Ice_Hockey')}
           className={styles.strSportButton}
         >
           Ice Hockey

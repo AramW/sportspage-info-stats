@@ -1,7 +1,7 @@
 import { config } from 'dotenv-safe';
 import postgres from 'postgres';
 
-config();
+// config();
 
 // export const sql = postgres({
 //  transform: {

@@ -3,7 +3,7 @@ export const searchTeams = async (
   setter: (data: []) => void,
 ) => {
   const request = await fetch(
-    `http://localhost:3000/api/searchTeam?search=${serchQuery}`,
+    `/api/searchTeam?search=${serchQuery}`,
 
     {
       method: 'GET',
