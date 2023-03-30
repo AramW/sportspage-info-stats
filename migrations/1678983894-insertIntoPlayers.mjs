@@ -1,24 +1,16 @@
-const players = [
-  { id: 1, first_name: 'Kuba', type: 'Human', last_name: 'Chicken' },
-  { id: 2, first_name: 'Matthias', type: 'Human', last_name: 'Fis' },
-  { id: 3, first_name: 'Awina', type: 'Human', last_name: 'We' },
-  { id: 4, first_name: 'Theo', type: 'Human', last_name: 'Berserk' },
-  { id: 5, first_name: 'Klay', type: 'Human', last_name: 'Thompson' },
-];
-
 export async function up(sql) {
   await sql`
-    INSERT INTO players ${sql(players, 'first_name', 'type', 'last_name')}
+   CREATE TABLE players (
+  id integer PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+  first_name varchar(80) NOT NULL UNIQUE,
+  last_name varchar(80) NOT NULL UNIQUE,
+  type varchar(70) NOT NULL
+  )
     `;
 }
 
 export async function down(sql) {
-  for (const player of players) {
-    await sql`
-    DELETE FROM
-      players
-    WHERE
-      id = ${player.id}
-    `;
-  }
+  await sql`
+  DROP TABLE players
+  `;
 }
