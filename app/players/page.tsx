@@ -18,9 +18,9 @@ export default async function PlayersPage() {
 
   // for example you may also check if session user is an admin role
 
-  // if (!session) {
-  //   redirect('/login?returnTo=/players');
-  // }
+  if (!session) {
+    redirect('/login?returnTo=/players');
+  }
 
   // const players = await getPlayers();
 

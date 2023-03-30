@@ -13,9 +13,9 @@ export default async function teamrosterTage() {
     (await getValidSessionByToken(sessionTokenCookie.value));
 
   // if yes redirect to home
-  // if (!session) {
-  //   redirect('/login?returnTo=/teamroster');
-  // }
+  if (!session) {
+    redirect('/login?returnTo=/teamroster');
+  }
 
   return (
     <div style={{ display: 'flex', justifyContent: 'center' }}>
